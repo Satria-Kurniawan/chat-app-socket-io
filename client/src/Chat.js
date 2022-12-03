@@ -51,7 +51,7 @@ function Chat({ socket, username, roomID, onLeftChat }) {
         </div>
       </header>
       <main>
-        <Scroller className="w-full h-[80vh] rounded-b-md border p-3 mb-3">
+        <Scroller className="w-full h-[70vh] rounded-b-md border p-3 mb-3">
           {messageList.map((obj, i) => (
             <div key={i} className="p-3">
               <div
