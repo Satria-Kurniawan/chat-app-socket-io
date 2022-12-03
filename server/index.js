@@ -16,10 +16,6 @@ const io = new Server(server, {
   },
 })
 
-app.get("/", (req, res) => {
-  res.send("Server Running")
-})
-
 io.on("connection", (socket) => {
   console.log("User connected", socket.id)
 
@@ -36,6 +32,10 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("User disconnected", socket.id)
   })
+})
+
+app.get("/", (req, res) => {
+  res.send("Server Running")
 })
 
 server.listen(PORT, () => {
