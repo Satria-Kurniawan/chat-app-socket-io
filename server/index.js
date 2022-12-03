@@ -18,7 +18,7 @@ const io = new Server(server, {
 })
 
 router.get("/", (req, res) => {
-  res.send("Server Running")
+  res.json("Server Running")
 })
 
 io.on("connection", (socket) => {
