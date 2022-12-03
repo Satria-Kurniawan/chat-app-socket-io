@@ -5,7 +5,6 @@ const cors = require("cors")
 const { Server } = require("socket.io")
 const dotenv = require("dotenv").config()
 const PORT = process.env.PORT || 5000
-const router = express.Router()
 
 app.use(cors())
 
@@ -17,8 +16,8 @@ const io = new Server(server, {
   },
 })
 
-router.get("/", (req, res) => {
-  res.json("Server Running")
+app.get("/", (req, res) => {
+  res.send("Server Running")
 })
 
 io.on("connection", (socket) => {
