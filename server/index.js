@@ -8,6 +8,10 @@ const PORT = process.env.PORT || 5000
 
 app.use(cors())
 
+app.get("/", (req, res) => {
+  res.send("Server Running")
+})
+
 const server = http.createServer(app)
 const io = new Server(server, {
   cors: {
@@ -32,10 +36,6 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("User disconnected", socket.id)
   })
-})
-
-app.get("/", (req, res) => {
-  res.send("Server Running")
 })
 
 server.listen(PORT, () => {
