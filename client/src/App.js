@@ -3,7 +3,7 @@ import io from "socket.io-client"
 import Chat from "./Chat"
 import { IoEnter } from "react-icons/io5"
 
-const socket = io.connect(process.env.REACT_APP_SERVER_HOST)
+const socket = io.connect("https://sensitive-chat.up.railway.app/")
 
 function App() {
   const [username, setUsername] = useState("")
